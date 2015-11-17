@@ -1,0 +1,37 @@
+header.header
+	.container
+		.header__left
+			a(href="#" title="На главную").logo
+				img(src="../img/logo/logo_header.png" alt="Логотип").logo__img
+				span.logo__text Тестовое задание
+			h1.title Список участников класса супергероев
+			//- .desc 
+				p.desc__text Супергерои чаще всего появляются в комиксах, и истории о супергероях — доминирую-щая форма американских комиксов, до того что термины «супергерой» и «персонаж комиксов» в Северной Америке стали синонимами.
+		.header__right
+			ul.socials
+				each social in socials
+					li(class="socials__item socials__item_" + social)
+						a(href="https://#{social}.com/" target="_blank").socials__link= social
+			.header__form
+				h3.header__form-title Добавление новичков
+				form(action="#" method="post").form
+					label.form__label 
+						span.form__label-text Имя
+						input(type="text" name="name").form__input
+					label.form__label
+						span.form__label-text Фамилия
+						input(type="text" name="surname").form__input
+					label.form__label
+						span.form__label-text Отчетсво
+						input(type="text" name="patronymic").form__input
+					label.form__label
+						span.form__label-text.form__label-text_select Год
+						select.form__select-item
+										each option in options
+											option(value="")= option
+					.form__submit
+						input(type="submit" class="form__submit-input" value="Добавить")
+				
+
+
+

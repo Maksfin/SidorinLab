@@ -1,0 +1,17 @@
+footer.footer
+	.footer__top
+		.container 
+			.footer__left
+				a(href="#" title="").logo.logo_footer
+					img(src="../img/logo/logo_footer.png" alt="").logo__img
+					span.logo__text 
+			.footer__right
+				.footer__right-wrap
+					ul.socials.socials_footer
+						each social in socials
+							li(class="socials__item socials__item_" + social)
+								a(href="#").socials__link= social
+				+ul('footer-nav', navigation, -1, true)
+	.footer__bottom
+		.container
+			.footer__copyright 

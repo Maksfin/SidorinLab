@@ -1,0 +1,204 @@
+.header {
+	background: url(../img/bg/header_bg.png);
+	min-height:400px;
+
+	.container {
+		@include clearfix;
+		padding-top:22px;	
+	}
+}
+
+.header__left {
+	float:left;
+	width:60%;
+}
+
+.header__right {
+	float:right;
+}
+
+.logo {
+	display: block;
+	margin-bottom: 40px;
+	@include inlineblock;
+}
+
+.logo__img {
+	display: block;
+	max-width: 70px;
+}
+
+.logo__text {
+	position: absolute;
+	top: 0;
+	left: -99999px;
+}
+
+.title {
+	color: $main_white_title;
+	font-family: $font-light;
+	font-size: $font-size_main + 21px;
+	line-height: 40px;
+	letter-spacing: 3px;
+	margin-bottom: 25px;
+	max-width: 420px;
+	text-transform:uppercase;
+}
+
+.desc__text {
+	color: #ccc;
+	line-height:24px;
+
+}
+.socials {
+	margin-bottom: 20px;
+}
+
+.socials__item {
+	@include inlineblock(middle);
+	margin-left: 15px;
+	
+	&:first-child {
+		margin-left: 0;
+	}
+
+	.socials__link {
+		display:block;
+		text-indent: -99999px;
+	}
+}
+
+ $socials-map: sprite-map('icons/socials_header/*.png', $spacing: 70px);
+
+@each $social in $socials {
+ 	.socials__item_#{$social} {
+ 		.socials__link {
+			@include get-sprite($socials-map, $social);
+		
+	 		&:hover {
+	 			$social_hover: $social + '_hover';
+	 	 		@include get-sprite($socials-map, $social_hover);
+	 		}
+	 	}
+	}
+}
+
+.header__form {
+	position: relative;
+	width:370px;
+	border: 4px solid $main_orange;
+	padding: 15px 15px 12px 15px;
+	box-sizing: border-box;
+
+	&:before {
+		content: '';
+    	z-index: 2;
+    	position: absolute;
+    	left: -6px;
+    	top: 42px;
+    	border-right: 8px solid #0a0e1e;
+    	border-top: 19px solid transparent;
+    	border-bottom: 19px solid transparent;
+	}
+
+	&:after {
+		content: '';
+    	position: absolute;
+    	border-right: 10px solid #f1a20d;
+    	border-top: 23px solid transparent;
+    	border-bottom: 23px solid transparent;
+    	left: -11px;
+    	top: 38px;
+	}
+}
+
+.header__form-title {
+	position: relative;
+	color: $main_bg;
+	font-family: $font-light;
+	font-size: $font-size_main + 4px;
+	line-height: 20px;
+	text-transform:uppercase;
+	margin-bottom: 12px; 
+
+	&:after {
+		content: '';
+		cursor:pointer;
+		position: absolute;
+		top:2px;
+		right: 0;
+		@include get-sprite($general-sprite, to_up); 
+	}
+
+	&.active {
+		&:after {
+			content: '';
+			cursor:pointer;
+			position: absolute;
+			top:2px;
+			right: 0;
+			@include get-sprite($general-sprite, to_bottom); 
+		}
+	}
+}
+
+.form__label {
+	font-size: $font-size_main + 2px;
+	@include clearfix;
+}
+
+.form__input {
+	float: right;
+	width: 249px;
+	height: 32px;
+	line-height: 32px;
+	color: $main_bg;
+	background: #000;
+	border: 2px solid $main_orange;
+	box-sizing: border-box;
+	padding: 0 10px;
+	margin-bottom: 10px;
+	outline: none;
+
+}
+.form__label-text {
+	float: left;
+	color: #ccc;
+	font-family: $font-light_italic;
+	height:32px;
+	line-height: 32px;
+}
+
+.form__label-text_select {
+	line-height: 25px;
+	height:25px;
+}
+
+.form__submit-input {
+	width: 132px;
+	height: 32px;
+	background: $main_orange;
+	border: none 0px;
+	outline:none;
+	@include border-radius(5px);
+	overflow: hidden;
+	color: $main_bg;
+	font-size: $font-size_main + 2px;
+	font-family: $font-semibold;
+	padding-left:25px;
+}
+
+.form__submit {
+	position: relative;
+	margin-left: 83px;
+
+
+	&:before {
+		content: '';
+		position: absolute;
+		top:7px;
+		left:8px;
+		@include get-sprite($general-sprite, btn_plus); 
+		cursor:pointer;
+	}
+}

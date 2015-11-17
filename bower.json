@@ -1,0 +1,12 @@
+{
+  "name": "shop",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "1.8.3",
+    "normalize-css": "~3.0.3",
+    "modernizer": "~2.8.2",
+    "jquery-ui": "~1.11.4",
+    "select2": "~4.0.0",
+    "jquery.columnizer": "~1.6.2"
+  }
+}

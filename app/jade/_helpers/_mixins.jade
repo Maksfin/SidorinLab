@@ -1,10 +1,10 @@
 //- List generator item_active
 mixin ul(className, items, activeElem, onlyList)
 	if(onlyList)
-		ul(class= className + '__list')
+		ul(class= className + '-list')
 			each item, index in items
-				li(class= className + "__item" + ((activeElem === index) ? ' ' + className + '__item_active' : ''))
-					a(href="#" class= className + "__link" title='#{item}')= item	
+				li(class= className + "-item" + ((activeElem === index) ? ' ' + className + '-item_active' : ''))
+					a(href="#" class= className + "-link" title='#{item}')= item	
 	else
 		nav(class= className)
 			.container

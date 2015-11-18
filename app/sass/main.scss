@@ -22,10 +22,4 @@ $general-sprite: sprite-map('elements/*.png', $spacing: 70px);
 // Section
 @import '_common/_header';
 @import '_common/_content';
-// @import '_common/_breadcrumbs';
-// @import '_common/_sidebar';
-// @import '_common/_sorting';
-// @import '_common/_products';
-// @import '_common/_pagination';
-// @import '_common/_important';
-// @import '_common/_footer';
+@import '_common/_footer';

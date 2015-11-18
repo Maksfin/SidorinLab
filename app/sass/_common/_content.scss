@@ -7,17 +7,13 @@
 	float: left;
 	width: 60%;
 	padding-left: 20px;
-	margin: 60px 0  20px 0;
+	margin: 58px 0  20px 0;
 }
 
 .students__item {
-	margin-top: 10px;
+	line-height: 32px;
 	padding-left: 8px;
 	color: $main_black;
-
-	&:first-child {
-		margin-top: 0;
-	}
 }
 
 .photo {
@@ -69,8 +65,63 @@
 	text-align:center;
 }
 
+.about-class {
+	margin-bottom: 20px;
+}
 .about-class__title {
 	color: #ffb400;
 	font-size: $font-size_main + 7px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
 }
 
+.about-class__text {
+	line-height: 24px;
+	letter-spacing: -0.1px;
+	color:#666;
+}
+
+.about-costume {
+	@include clearfix;
+	margin-bottom: 52px;
+}
+.about-costume__title  {
+	font-family: $font-semibold;
+	font-size: $font-size_main + 2px;
+	color: #000;
+	line-height: 32px;
+	margin-bottom: 20px;
+}
+
+.about-costume__left {
+	width:370px;
+	float: left;
+}
+
+.about-costume___img {
+	display: block;
+	max-width: 100%;
+}
+.about-costume__right {
+	width: 570px;
+	float:right;
+}
+
+.about-costume__text {
+	@extend .about-class__text;
+	margin-bottom: 6px;
+}
+
+.about-costume__link {
+	color:#ffc000;
+	position: relative;
+
+	&:after {
+		content:'';
+		position: absolute;
+		top: 6px;
+		right: -7px;
+		@include get-sprite($general-sprite, link_right); 
+
+	}
+}
